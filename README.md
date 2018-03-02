@@ -1,4 +1,4 @@
-CS365 Project
-Christopher Dean
-Michael Kang
-Toy Reid
+## CS365 Project  
+- Christopher Dean  
+- Michael Kang  
+- Toy Reid  
