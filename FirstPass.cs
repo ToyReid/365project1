@@ -29,16 +29,17 @@ class FirstPass
 
 			while((line = sr.ReadLine()) != null)
 			{
+				if(line.IsNullOrWhiteSpace()) continue;
+
+				//cleaning the line
 				line = line.RemoveAfterSubstring("#");
 				line = line.RemoveAfterSubstring("//");
 				line = line.Trim();
 
 				Console.WriteLine(line);
 			}
-
-
 		}
 		return rv;
-	}//ladskfjsldkfj
+	}
 
 }
