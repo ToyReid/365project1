@@ -29,8 +29,9 @@ class FirstPass
 
 			while((line = sr.ReadLine()) != null)
 			{
-				line = StripComments(line, "#");
-				line = StripComments(line, "//");
+				line = line.RemoveAfterSubstring("#");
+				line = line.RemoveAfterSubstring("//");
+				line = line.Trim();
 
 				Console.WriteLine(line);
 			}
@@ -40,15 +41,4 @@ class FirstPass
 		return rv;
 	}//ladskfjsldkfj
 
-	public static string StripComments(string line, string commentDelimiter)
-	{
-		int index;
-
-		index = line.IndexOf(commentDelimiter);
-
-		if(index == -1) return line;
-
-		return line.Substring(0, index);
-
-	}
 }
