@@ -19,7 +19,7 @@ class FirstPass
 		mFileName = fileName;
 	}
 
-	public List<string> getCleanInput()
+	public List<string> getCleanInput(out Dictionary<string, ILabel> labels)
 	{
 		List<string> rv = new List<string>();
 		string line;
@@ -29,7 +29,7 @@ class FirstPass
 
 			while((line = sr.ReadLine()) != null)
 			{
-				if(line.IsNullOrWhiteSpace()) continue;
+				if(String.IsNullOrWhiteSpace(line)) continue;
 
 				//cleaning the line
 				line = line.RemoveAfterSubstring("#");
