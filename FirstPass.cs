@@ -9,7 +9,10 @@ class FirstPass
 	public static void Main(string[] argv)
 	{
 		var fp = new FirstPass(argv[0]);
-		fp.getCleanInput();
+		LabelDict dict;
+		var lines = fp.getCleanInput(dict);
+		foreach(line in lines)
+			Console.WriteLine(line);
 	}
 
 	string mFileName;
@@ -19,10 +22,11 @@ class FirstPass
 		mFileName = fileName;
 	}
 
-	public List<string> getCleanInput(out Dictionary<string, ILabel> labels)
+	public List<string> getCleanInput(out LabelDict dict)
 	{
 		List<string> rv = new List<string>();
 		string line;
+		dict = new LabelDict();
 
 		using(var sr = new StreamReader(mFileName))
 		{
@@ -35,13 +39,21 @@ class FirstPass
 				line = line.RemoveAfterSubstring("#");
 				line = line.RemoveAfterSubstring("//");
 				line = line.Trim();
+				line = line.ToLower();
 
 				if(String.IsNullOrWhiteSpace(line)) continue;
 
-				Console.WriteLine(line);
+				//is a label
+				if(line.EndsWith(":"))
+				{
+					string label = line.Substring(0, line.Length-1);
+					dict[label] = new Label(label, rv.Count * 4);
+				}
+				else
+				{
+					rv.Push(line);
+				}
 			}
 		}
 		return rv;
 	}
-
-}
