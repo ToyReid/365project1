@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 class LabelDict
 {
-	protected Dictionary<string, Ilabel> labels;
+	public Dictionary<string, Ilabel> labels;
 
 	public LabelDict() {
 		labels = new Dictionary<string, Ilabel>;
