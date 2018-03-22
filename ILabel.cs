@@ -1,5 +1,5 @@
 interface ILabel
 {
-	uint Address{ get; }
+	uint Address { get; }
 	string Label { get; }
 }
