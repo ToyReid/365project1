@@ -1,0 +1,78 @@
+fe ed be ef does not count.
+
+Exit or exit = ByteCode:(exit code) 00 00 00 , Bit: 0000 0000 0000 0000 0000 (8bit exit code);
+Swap or swap= ByteCode: 00 00 00 01, bit: 0000 0001 0000 0000 0000 0000 0000
+Inpt or inpt = ByteCode: 00 00 00 02, bit: 0000 0010 0000 0000 0000 0000 0000
+Nop or nop = ByteCode: 00 00 00 03, Bit: 0000 0011 0000 0000 0000 0000 0000
+Pop or pop = ByteCode: 00 00 00 10, Bit: 0001 0000 0000 0000 0000 0000 0000
+Add or add = ByteCode: 00 00 00 20, Bit: 0010 0000 0000 0000 0000 0000 0000
+Sub or sub = ByteCode: 00 00 00 21, Bit: 0010 0001 0000 0000 0000 0000 0000
+Mul or mul = ByteCode: 00 00 00 22, Bit: 0010 0010 0000 0000 0000 0000 0000
+Div or div = ByteCode: 00 00 00 23, Bit: 0010 0011 0000 0000 0000 0000 0000
+Rem or rem = ByteCode: 00 00 00 24, Bit: 0010 0100 0000 0000 0000 0000 0000
+And or and= ByteCode: 00 00 00 25, Bit: 0010 0101 0000 0000 0000 0000 0000
+Or  or or = ByteCode: 00 00 00 26, Bit: 0010 0110 0000 0000 0000 0000 0000
+Xor or xor = ByteCode: 00 00 00 27, Bit: 0010 0111 0000 0000 0000 0000 0000
+Neg or neg = ByteCode: 00 00 00 30, Bit: 0011 0000 0000 0000 0000 0000 0000
+Not or not = ByteCode: 00 00 00 31, Bit: 0011 0001 0000 0000 0000 0000 0000
+Goto or goto = ByteCode (Label location in mem) 70, bit: 0111 (PC relative offset);
+
+if [eq, ne, lt, gt, le, ge] = ByteCode: (What we are comparing) 8(0,1,2,3,4,5) , Bit: 1000 COND (PC RElative offset)
+COND : eq = 0000, ne = 0001, lt = 0010, gt = 0011, le = 0100, ge = 0101
+
+if [ez, nz, mi, pl] = ByteCode: (What we are comparing) 9(0,1,2,3) Bit: 1001 COND (PC Relative Offset)
+COND: ez = 0000, nz = 0001, mi = 0010, pl = 0011
+
+Dup or dup = ByteCode: (Stack Top) c0 , Bit: 1100 (Stack Top Relative Offset) 00
+
+Print or print = ByteCode: 00 00 00 d0 , Bit: 1101 0000 0000 0000 0000 0000 0000
+Dump or dump = ByteCode: 00 00 00 e0, Bit: 1110 0000 0000 0000 0000 0000 0000
+Push or push = ByteCode: (what we are pushing converted into byte form) f0 , Bit: 1111 (What we are pushing)
+
+decimal hexadecimal and memory addresses.
+
+if no 0x then decimal. if 0x then hex. if neither and is string then memory address?
+
+what does pc Relative offset mean same with stack top relative offset.
+//
+interface Label{
+	char[] label;
+	double memAddress;
+}
+
+//interface instruction{
+	GiveBinary(char[] instru);
+}
+
+
+what will we do?
+
+if label we must save the memory address somehow keyed on the name of the label so we can jump to it. must be done in first pass.
+First pass should remove comments and the labels themselves. And just save the mem addresses and the names else where.
+
+
+second pass must convert all instructions to binary. Labels will be somewhere where we can get them. 
+
+every single instruction class will check if push or something that involves a value is the instruction.
+
+main(){
+Should call the functions we have and then could parse add invoke the proper class given our situation. so checks to see what the instruction is and have a switch statement.
+
+}
+
+public class Print : instruction {
+	//just return as a string? 00 00 00 d0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
