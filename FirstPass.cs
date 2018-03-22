@@ -36,6 +36,8 @@ class FirstPass
 				line = line.RemoveAfterSubstring("//");
 				line = line.Trim();
 
+				if(String.IsNullOrWhiteSpace(line)) continue;
+
 				Console.WriteLine(line);
 			}
 		}
