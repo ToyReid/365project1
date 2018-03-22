@@ -1,9 +1,9 @@
 public class Label : ILabel
 {
-	protected uint address;
+	protected int address;
 	protected string label;
 
-	public uint Address {
+	public int Address {
 		get {
 			return address;
 		}
@@ -15,7 +15,7 @@ public class Label : ILabel
 		}
 	}
 
-	public Label(string lab, uint addr) {
+	public Label(string lab, int addr) {
 		address = addr;
 		label = lab;
 	}
