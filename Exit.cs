@@ -13,5 +13,8 @@ public class Exit : IInstruction{
 			ByteCode.Or(tmp);
 		}
 	}
+	public Exit(){
+	ByteCode = new BitArray(32);
+	}
 }
 
