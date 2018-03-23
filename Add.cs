@@ -1,11 +1,10 @@
 using System;
 using System.Collections;
 
-public class Nop : IInstruction{
-	byte[] true = BitConverter.GetBytes(3);
-	//byte[] true = BitConverter.GetByte(50331648);
+public class Add : IInstruction {
+	byte[] true = BitConverter.GetByte(32);
+	//byte[] true = BitConverter.GetByte(536870912);
 	BitArray tmp = new BitArray(true);
 	ByteCode = new BitArray(32);
 	ByteCode.Or(tmp);
 }
-
