@@ -4,10 +4,9 @@ using System.Collections;
 
 public class Or : IInstruction{
 	public Or(){
-        	byte[] true = BitConverter.GetByte(38);
-        	//byte[] true = BitConverter.GetByte(637534208);
 		ByteCode = new BitArray(32);
-        	BitArray tmp = new BitArray(true);
-        	ByteCode.Or(tmp);
+		ByteCode[29] = 1;
+		ByteCode[26] = 1;
+		ByteCode[25] = 1;
 	}
 }

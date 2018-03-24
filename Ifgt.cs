@@ -3,10 +3,17 @@ using System.Collections;
 
 
 public class Ifgt : IInstruction{
-        public Ifgt(int address){
-                byte[] true = BitConverter.GetByte(2197815296 + address);
-                ByteCode = new BitArray(32);
-                BitArray tmp = new BitArray(true);
-                ByteCode.Or(tmp);
-        }
+	public Ifgt(string value){
+		int j;  
+		if(Int32.TryParse(value,out j)){
+			ByteCode = new BitArray(32);
+			byte[] true = BitConverter.GetByte(j);
+			BitArray tmp = new BitArray(true);
+			ByteCode.Or(tmp);
+			ByteCode[31] = 1;
+			ByteCode[24] = 1;
+			ByteCode[25] = 1;
+		}
+
+	}
 }

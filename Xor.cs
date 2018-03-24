@@ -4,10 +4,10 @@ using System.Collections;
 
 public class Xor : IInstruction{
 	public Xor(){
-        	byte[] true = BitConverter.GetByte(39);
-        	//byte[] true = BitConverter.GetByte(654311424);
 		ByteCode = new BitArray(32);
-        	BitArray tmp = new BitArray(true);
-        	ByteCode.Or(tmp);
+		ByteCode[29] = 1;
+		ByteCode[26] = 1;
+		ByteCode[25] = 1;
+		ByteCode[24] = 1;
 	}
 }

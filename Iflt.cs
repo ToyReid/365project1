@@ -3,10 +3,16 @@ using System.Collections;
 
 
 public class Iflt : IInstruction{
-        public Iflt(int address){
-                byte[] true = BitConverter.GetByte(2181038080 + address);
-                ByteCode = new BitArray(32);
-                BitArray tmp = new BitArray(true);
-                ByteCode.Or(tmp);
-        }
+	public Iflt(string value){
+		int j;  
+		if(Int32.TryParse(value,out j)){
+			ByteCode = new BitArray(32);
+			byte[] true = BitConverter.GetByte(j);
+			BitArray tmp = new BitArray(true);
+			ByteCode.Or(tmp);
+			ByteCode[31] = 1;
+			ByteCode[25] = 1;
+		}
+
+	}        
 }

@@ -4,10 +4,8 @@ using System.Collections;
 
 public class Neg : IInstruction{
 	public Neg(){
-        	byte[] true = BitConverter.GetByte(48);
-        	//byte[] true = BitConverter.GetByte(805306368);
 		ByteCode = new BitArray(32);
-        	BitArray tmp = new BitArray(true);
-        	ByteCode.Or(tmp);
+		ByteCode[29] = 1;
+		ByteCode[28] = 1;
 	}
 }
