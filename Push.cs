@@ -23,18 +23,5 @@ public class Push : IInstruction {
 		bc[28] = true;
 	}
 	
-	//Memory Address Push Constructor.
-
-	public Push(int value){
-		bc = new BitArray(32);
-		byte[] True = BitConverter.GetBytes(value);
-		BitArray tmp = new BitArray(True);
-		bc.Or(tmp);		
-		bc[31] = true;
-		bc[30] = true;
-		bc[29] = true;
-		bc[28] = true;
-	}
-
 }
 
