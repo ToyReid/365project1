@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 
 public class Add : IInstruction {
-
 	protected BitArray bc;
 
 	public BitArray ByteCode {

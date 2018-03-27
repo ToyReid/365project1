@@ -1,9 +1,16 @@
 using System;
 using System.Collections;
   
+public class Neg : IInstruction {
+	protected BitArray bc;
 
-public class Neg : IInstruction{
-	public Neg(){
+	public BitArray ByteCode {
+		get {
+			return bc;
+		}
+	}
+	
+	public Neg() {
 		ByteCode = new BitArray(32);
 		ByteCode[29] = 1;
 		ByteCode[28] = 1;

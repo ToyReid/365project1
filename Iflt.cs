@@ -1,18 +1,21 @@
 using System;
 using System.Collections;
 
+public class Iflt : IInstruction {
+	protected BitArray bc;
 
-public class Iflt : IInstruction{
-	public Iflt(string value){
-		int j;
-		if(Int32.TryParse(value,out j)){
-			ByteCode = new BitArray(32);
-			byte[] True = BitConverter.GetByte(j);
-			BitArray tmp = new BitArray(True);
-			ByteCode.Or(tmp);
-			ByteCode[31] = 1;
-			ByteCode[25] = 1;
+	public BitArray ByteCode {
+		get {
+			return bc;
 		}
-
+	}
+	
+	public Iflt(int value){
+		ByteCode = new BitArray(32);
+		byte[] True = BitConverter.GetByte(value);
+		BitArray tmp = new BitArray(True);
+		ByteCode.Or(tmp);
+		ByteCode[31] = 1;
+		ByteCode[25] = 1;
 	}
 }
