@@ -3,11 +3,17 @@ using System.Collections;
 
 public class Add : IInstruction {
 
+	protected BitArray bc;
 
+	public BitArray ByteCode {
+		get {
+			return bc;
+		}
+	}
 
 	public Add(){
-		ByteCode = new BitArray(32);
-		ByteCode[29] = true;
+		bc = new BitArray(32);
+		bc[29] = true;
 	}
 
 }
