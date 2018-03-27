@@ -1,5 +1,7 @@
 all:
-	mcs Add.cs \
+	mcs \
+	Assembler.cs \
+	Add.cs \
 	And.cs \
 	Div.cs \
 	Dump.cs \

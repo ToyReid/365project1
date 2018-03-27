@@ -8,12 +8,12 @@ class FirstPass
 
 	string mFileName;
 
-	FirstPass(string fileName)
+	public FirstPass(string fileName)
 	{
 		mFileName = fileName;
 	}
 
-	public List<string> getCleanInput(out LabelDict dict)
+	public List<string> GetCleanInput(out LabelDict dict)
 	{
 		List<string> rv = new List<string>();
 		string line;

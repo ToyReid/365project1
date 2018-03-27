@@ -15,7 +15,7 @@ public class ParseInstruction {
 	}
 
 	public ParseInstruction(List<string> lines, LabelDict labels) {
-		ForEach(line in lines) {
+		foreach(string line in lines) {
 			// Split line into two strings delimited by spaces
 			// strs[0] = instruction, instr[1] = literal
 			string[] strs = line.Split(null);
