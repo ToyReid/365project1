@@ -21,19 +21,20 @@ public class ParseInstruction {
 			string[] strs = line.Split(null);
 
 			instruction = strs[0];
-			if(strs[1] == string.Empty)
+			if(strs.Length == 1)
 				literal = 0;
 			else
-				literal = Convert.ToInt32(strs[1]);
-
-			haveLabel = true;
-			try {
-				labelLoc = labels[strs[1]].Address;
-			}
-			catch(InvalidLabelException ex) {
-				Console.Error.WriteLine($"{ex} Label not found in dictionary.");
-				haveLabel = false;
-			}
+				try {
+					literal = Convert.ToInt32(strs[1]);
+				}
+				catch(InvalidLabelException) {
+					try {
+						literal = labels[strs[1]].Address - instrList.Count * 4;
+					}
+					catch(Exception) {
+						// Do nothing
+					}
+				}
 
 			switch (instruction) {
 				case "exit":
