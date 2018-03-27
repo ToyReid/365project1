@@ -11,8 +11,8 @@ public class Neg : IInstruction {
 	}
 	
 	public Neg() {
-		ByteCode = new BitArray(32);
-		ByteCode[29] = true;
-		ByteCode[28] = true;
+		bc = new BitArray(32);
+		bc[29] = true;
+		bc[28] = true;
 	}
 }

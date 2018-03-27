@@ -7,7 +7,7 @@ public class Dup : IInstruction{
 	public BitArray ByteCode{
 		get {
 			return bc;
-		}	
+		}
 	}
 
 	public Dup(int off){

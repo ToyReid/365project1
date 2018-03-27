@@ -12,10 +12,10 @@ public class Xor : IInstruction {
 	}
 	
 	public Xor() {
-		ByteCode = new BitArray(32);
-		ByteCode[29] = true;
-		ByteCode[26] = true;
-		ByteCode[25] = true;
-		ByteCode[24] = true;
+		bc = new BitArray(32);
+		bc[29] = true;
+		bc[26] = true;
+		bc[25] = true;
+		bc[24] = true;
 	}
 }

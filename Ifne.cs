@@ -11,11 +11,11 @@ public class Ifne : IInstruction {
 	}
 	
 	public Ifne(int value){
-		ByteCode = new BitArray(32);
+		bc = new BitArray(32);
 		byte[] True = BitConverter.GetByte(value);
 		BitArray tmp = new BitArray(True);
-		ByteCode.Or(tmp);
-		ByteCode[31] = true;
-		ByteCode[24] = true;
+		bc.Or(tmp);
+		bc[31] = true;
+		bc[24] = true;
 	}
 }

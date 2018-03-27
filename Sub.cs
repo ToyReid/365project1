@@ -11,8 +11,8 @@ public class Sub : IInstruction {
 	}
 	
 	public Sub() {
-		ByteCode = new BitArray(32);
-		ByteCode[29] = true;
-		ByteCode[24] = true;
+		bc = new BitArray(32);
+		bc[29] = true;
+		bc[24] = true;
 	}
 }

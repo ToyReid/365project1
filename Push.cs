@@ -13,27 +13,27 @@ public class Push : IInstruction {
 	
 	//Given a Literal Constructor
 	public Push(int value) {
-		ByteCode = new BitArray(32);
+		bc = new BitArray(32);
 		byte[] True = BitConverter.GetByte(value);
 		BitArray tmp = new BitArray(True);
-		ByteCode.Or(tmp);
-		ByteCode[31] = true;
-		ByteCode[30] = true;
-		ByteCode[29] = true;
-		ByteCode[28] = true;
+		bc.Or(tmp);
+		bc[31] = true;
+		bc[30] = true;
+		bc[29] = true;
+		bc[28] = true;
 	}
 	
 	//Memory Address Push Constructor.
 
 	public Push(int value){
-		ByteCode = new BitArray(32);
+		bc = new BitArray(32);
 		byte[] True = BitConverter.GetByte(value);
 		BitArray tmp = new BitArray(True);
-		ByteCode.Or(tmp);		
-		ByteCode[31] = true;
-		ByteCode[30] = true;
-		ByteCode[29] = true;
-		ByteCode[28] = true;
+		bc.Or(tmp);		
+		bc[31] = true;
+		bc[30] = true;
+		bc[29] = true;
+		bc[28] = true;
 	}
 
 }

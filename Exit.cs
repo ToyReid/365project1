@@ -14,15 +14,15 @@ public class Exit : IInstruction{
 	public Exit(int value){
 
 		//Should Parse the value into an int if possible. then the int gets put into j
-		ByteCode = new BitArray(32);
+		bc = new BitArray(32);
 		byte[] True = BitConverter.GetByte(value);
 		BitArray tmp = new BitArray(True);
-		ByteCode.Or(tmp);
+		bc.Or(tmp);
 	}
 
 	//No Exit code given constructor.
 	public Exit(){
-		ByteCode = new BitArray(32);
+		bc = new BitArray(32);
 	}
 }
 

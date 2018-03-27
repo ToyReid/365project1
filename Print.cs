@@ -12,9 +12,9 @@ public class Print : IInstruction {
 	}
 	
 	public Print() {
-		ByteCode = new BitArray(32);
-		ByteCode[31] = true;
-		ByteCode[30] = true;
-		ByteCode[28] = true;
+		bc = new BitArray(32);
+		bc[31] = true;
+		bc[30] = true;
+		bc[28] = true;
 	}
 }

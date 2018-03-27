@@ -11,9 +11,9 @@ public class Nop : IInstruction {
 	}
 	
 	public Nop() {
-		ByteCode = new BitArray(32);
-		ByteCode[24] = true;
-		ByteCode[25] = true;
+		bc = new BitArray(32);
+		bc[24] = true;
+		bc[25] = true;
 	}
 }
 

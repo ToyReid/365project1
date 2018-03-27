@@ -12,7 +12,7 @@ public class Swap : IInstruction {
 	}
 	
 	public Swap() {
-		ByteCode = new BitArray(32);
-		ByteCode[24] = true;
+		bc = new BitArray(32);
+		bc[24] = true;
 	}
 }

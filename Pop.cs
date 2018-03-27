@@ -11,7 +11,7 @@ public class Pop : IInstruction {
 	}
 	
 	public Pop() {
-		ByteCode = new BitArray(32);
-		ByteCode[28] = true;
+		bc = new BitArray(32);
+		bc[28] = true;
 	}
 }

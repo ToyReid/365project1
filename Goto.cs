@@ -11,12 +11,12 @@ public class Goto : IInstruction{
 	}
 
 	public Goto(int value){
-		ByteCode = new BitArray(32);
+		bc = new BitArray(32);
 		byte[] True = BitConverter.GetByte(value);
 		BitArray tmp = new BitArray(True);
-		ByteCode.Or(tmp);
-		ByteCode[30] = true;
-		ByteCode[29] = true;
-		ByteCode[28] = true;
+		bc.Or(tmp);
+		bc[30] = true;
+		bc[29] = true;
+		bc[28] = true;
 	}
 }

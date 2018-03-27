@@ -11,8 +11,8 @@ public class Mul : IInstruction {
 	}
 	
 	public Mul() {
-		ByteCode = new BitArray(32);
-		ByteCode[29] = true;
-		ByteCode[25] = true;
+		bc = new BitArray(32);
+		bc[29] = true;
+		bc[25] = true;
 	}
 }

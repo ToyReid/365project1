@@ -11,9 +11,9 @@ public class Dump : IInstruction{
 	}
 	
 	public Dump(){
-		ByteCode = new BitArray(32);
-		ByteCode[31] = true;
-		ByteCode[30] = true;
-		ByteCode[29] = true;
+		bc = new BitArray(32);
+		bc[31] = true;
+		bc[30] = true;
+		bc[29] = true;
 	}
 }
