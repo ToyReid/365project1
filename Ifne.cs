@@ -9,7 +9,7 @@ public class Ifne : IInstruction {
 			return bc;
 		}
 	}
-	
+
 	public Ifne(int value){
 		bc = new BitArray(32);
 		byte[] True = BitConverter.GetBytes(value & 0xffffff);
