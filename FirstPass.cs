@@ -6,15 +6,6 @@ using System.Collections.Generic;
 class FirstPass
 {
 
-	public static void Main(string[] argv)
-	{
-		var fp = new FirstPass(argv[0]);
-		LabelDict dict;
-		var lines = fp.getCleanInput(dict);
-		foreach(line in lines)
-			Console.WriteLine(line);
-	}
-
 	string mFileName;
 
 	FirstPass(string fileName)
@@ -57,3 +48,4 @@ class FirstPass
 		}
 		return rv;
 	}
+}

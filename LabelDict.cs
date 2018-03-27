@@ -2,10 +2,10 @@ using System.Collections.Generic;
 
 class LabelDict
 {
-	public Dictionary<string, Ilabel> labels;
+	public Dictionary<string, ILabel> labels;
 
 	public LabelDict() {
-		labels = new Dictionary<string, Ilabel>;
+		labels = new Dictionary<string, ILabel>();
 	}
 
 	public ILabel this[string label] {

@@ -1,4 +1,5 @@
+using System;
 class InvalidLabelException : Exception
 {
-	public InvalidLabelException(msg) : base(msg) { }
+	public InvalidLabelException(string msg) : base(msg) { }
 }
