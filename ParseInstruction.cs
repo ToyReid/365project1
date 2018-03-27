@@ -1,7 +1,7 @@
 public class ParseInstruction {
 	protected int labelLoc;
+	protected int literal;
 	protected string instruction;
-	protected string literal;
 	bool haveLabel;
 
 	public ParseInstruction(string line, Dictionary labels) {
@@ -10,7 +10,10 @@ public class ParseInstruction {
 		string[] strs = line.Split(null);
 
 		instruction = strs[0];
-		literal = strs[1];
+		if(literal = string.Empty) 
+			literal = 0;
+		else 
+			literal = Convert.ToInt32(strs[1]);
 		haveLabel = true;
 		try {
 			labelLoc = labels[literal];
