@@ -25,13 +25,14 @@ public class ParseInstruction {
 				literal = 0;
 			else
 				try {
+					//Console.WriteLine($"{strs[1]}")
 					literal = Convert.ToInt32(strs[1]);
 				}
-				catch(InvalidLabelException) {
+				catch(FormatException) {
 					try {
 						literal = labels[strs[1]].Address - instrList.Count * 4;
 					}
-					catch(Exception) {
+					catch(InvalidLabelException) {
 						// Do nothing
 					}
 				}
