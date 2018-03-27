@@ -27,7 +27,6 @@ all:
 	Neg.cs \
 	Nop.cs
 	Not.cs \
-	notesformypart \
 	Or.cs \
 	ParseInstruction.cs \
 	Pop.cs

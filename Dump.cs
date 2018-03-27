@@ -12,7 +12,7 @@ public class Dump : IInstruction{
 	
 	public Dump(){
 		ByteCode = new BitArray(32);
-		ByteCode[3true] = true;
+		ByteCode[31] = true;
 		ByteCode[30] = true;
 		ByteCode[29] = true;
 	}
