@@ -15,9 +15,9 @@ public class Ifge : IInstruction{
 		byte[] True = BitConverter.GetByte(value);
 		BitArray tmp = new BitArray(True);
 		ByteCode.Or(tmp);
-		ByteCode[31] = 1;
-		ByteCode[24] = 1;
-		ByteCode[26] = 1;
+		ByteCode[31] = true;
+		ByteCode[24] = true;
+		ByteCode[26] = true;
 	}
 }
 

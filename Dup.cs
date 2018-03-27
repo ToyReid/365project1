@@ -16,7 +16,7 @@ public class Dup : IInstruction{
 		byte[] True = BitConverter.GetByte(off * 4);
 		BitArray tmp = new BitArray(True);
 		ByteCode.Or(tmp);
-		ByteCode[30] = 1;
-		ByteCode[31] = 1;
+		ByteCode[30] = true;
+		ByteCode[31] = true;
 	}
 }

@@ -15,8 +15,8 @@ public class Ifgt : IInstruction{
 		byte[] True = BitConverter.GetByte(value);
 		BitArray tmp = new BitArray(True);
 		ByteCode.Or(tmp);
-		ByteCode[31] = 1;
-		ByteCode[24] = 1;
-		ByteCode[25] = 1;
+		ByteCode[31] = true;
+		ByteCode[24] = true;
+		ByteCode[25] = true;
 	}
 }

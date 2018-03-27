@@ -13,8 +13,8 @@ public class Not : IInstruction {
 	
 	public Not() {
 		ByteCode = new BitArray(32);
-		ByteCode[29] = 1;
-		ByteCode[28] = 1;
-		ByteCode[24] = 1;
+		ByteCode[29] = true;
+		ByteCode[28] = true;
+		ByteCode[24] = true;
 	}
 }
