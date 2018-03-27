@@ -1,10 +1,18 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ParseInstruction {
 	protected int labelLoc;
 	protected int literal;
 	protected string instruction;
+	protected IInstruction curInstr;
+	protected List<BitArray> instrList = new List<BitArray>();
 	bool haveLabel;
+
+	public List<BitArray> InstrList {
+		get { return instrList; }
+	}
 
 	public ParseInstruction(string line, LabelDict labels) {
 		// Split line into two strings delimited by spaces
@@ -12,23 +20,24 @@ public class ParseInstruction {
 		string[] strs = line.Split(null);
 
 		instruction = strs[0];
-		if(strs[1] = string.Empty)
+		if(strs[1] == string.Empty)
 			literal = 0;
 		else
 			literal = Convert.ToInt32(strs[1]);
 
 		haveLabel = true;
 		try {
-			labelLoc = labels[strs[1]];
+			labelLoc = labels[strs[1]].Address;
 		}
 		catch(InvalidLabelException ex) {
-			Console.Error($"{ex} Label not found in dictionary.");
+			Console.Error.WriteLine($"{ex} Label not found in dictionary.");
 			haveLabel = false;
 		}
 
 		switch (instruction) {
 			case "exit":
-				Exit(literal);
+				curInstr = new Exit(literal);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "swap":
 				Swap();
