@@ -12,7 +12,7 @@ public class Ifeq : IInstruction{
 
 	public Ifeq(int value){
 		bc = new BitArray(32);
-		byte[] True = BitConverter.GetByte(value);
+		byte[] True = BitConverter.GetBytes(value);
 		BitArray tmp = new BitArray(True);
 		bc.Or(tmp);
 		bc[31] = true;

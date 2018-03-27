@@ -12,7 +12,7 @@ public class Dup : IInstruction{
 
 	public Dup(int off){
 		bc = new BitArray(32);
-		byte[] True = BitConverter.GetByte(off * 4);
+		byte[] True = BitConverter.GetBytes(off * 4);
 		BitArray tmp = new BitArray(True);
 		bc.Or(tmp);
 		bc[30] = true;
