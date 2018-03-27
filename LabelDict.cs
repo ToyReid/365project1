@@ -17,7 +17,7 @@ class LabelDict
 			}
 		}
 		set {
-			return labels[label] = value;
+			labels[label] = value;
 		}
 	}
 

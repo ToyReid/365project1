@@ -27,8 +27,8 @@ class FirstPass
 				if(String.IsNullOrWhiteSpace(line)) continue;
 
 				//cleaning the line
-				line = line.RemoveAfterSubstring("#");
-				line = line.RemoveAfterSubstring("//");
+				line = RemoveAfterSubstring(line, "#");
+				line = RemoveAfterSubstring(line, "//");
 				line = line.Trim();
 				line = line.ToLower();
 
@@ -47,5 +47,13 @@ class FirstPass
 			}
 		}
 		return rv;
+	}
+
+
+	public static string RemoveAfterSubstring(string s, string substring)
+	{
+		int index = s.IndexOf(substring);
+		if(index != -1) s = s.Substring(0, index);
+		return s;
 	}
 }

@@ -9,12 +9,6 @@ public class Label : ILabel
 		}
 	}
 
-	public string LabelVal{
-		get{
-			return label;
-		}
-	}
-
 	public Label(string lab, int addr) {
 		address = addr;
 		label = lab;
