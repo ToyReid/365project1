@@ -3,8 +3,18 @@ using System.Collections;
 
 
 public class Dup : IInstruction{
-        public Dup(){
-                ByteCode = new BitArray(32);
-                ByteCode[24] = 1;
-        }
+	protected BitArray bc;
+
+	public BitArray ByteCode{
+		get{
+			return bc;
+		}	
+	}
+
+	public Dup(int off){
+		ByteCode = new BitArray(32);
+		byte[] True = BitConverter.GetByte(off * 4);
+		BitArray tmp = new BitArray(True);
+		ByteCode.Or(tmp);
+	}
 }

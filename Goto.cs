@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Goto : IInstruction{
 
-	public Goto(string value){
+	public Goto(int value){
 		int j;
 		if(Int32.TryParse(value,out j)){
 			ByteCode = new BitArray(32);
