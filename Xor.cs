@@ -13,9 +13,9 @@ public class Xor : IInstruction {
 	
 	public Xor() {
 		ByteCode = new BitArray(32);
-		ByteCode[29] = 1;
-		ByteCode[26] = 1;
-		ByteCode[25] = 1;
-		ByteCode[24] = 1;
+		ByteCode[29] = true;
+		ByteCode[26] = true;
+		ByteCode[25] = true;
+		ByteCode[24] = true;
 	}
 }

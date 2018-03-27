@@ -15,6 +15,6 @@ public class Ifeq : IInstruction{
 		byte[] True = BitConverter.GetByte(value);
 		BitArray tmp = new BitArray(True);
 		ByteCode.Or(tmp);
-		ByteCode[31] = 1;
+		ByteCode[31] = true;
 	}
 }

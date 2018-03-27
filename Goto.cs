@@ -15,8 +15,8 @@ public class Goto : IInstruction{
 		byte[] True = BitConverter.GetByte(value);
 		BitArray tmp = new BitArray(True);
 		ByteCode.Or(tmp);
-		ByteCode[30] = 1;
-		ByteCode[29] = 1;
-		ByteCode[28] = 1;
+		ByteCode[30] = true;
+		ByteCode[29] = true;
+		ByteCode[28] = true;
 	}
 }

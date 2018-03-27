@@ -12,7 +12,7 @@ public class Rem : IInstruction {
 	
 	public Rem() {
 		ByteCode = new BitArray(32);
-		ByteCode[29] = 1;
-		ByteCode[26] = 1;
+		ByteCode[29] = true;
+		ByteCode[26] = true;
 	}
 } 

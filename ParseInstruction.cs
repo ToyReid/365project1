@@ -14,7 +14,7 @@ public class ParseInstruction {
 			literal = 0;
 		else 
 			literal = Convert.ToInt32(strs[1]);
-		haveLabel = true;
+		haveLabel = 1;
 		try {
 			labelLoc = labels[literal];
 		}
