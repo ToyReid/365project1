@@ -1,5 +1,5 @@
 using System;
-using System.Collection;
+using System.Collections;
 
 public class And : IInstruction{
 	public And(){

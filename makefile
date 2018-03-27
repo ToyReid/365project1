@@ -6,7 +6,6 @@ all:
 	Dup.cs \
 	Exit.cs \
 	FirstPass.cs \
-	FirstPass.exe \
 	Goto.cs \
 	Ifeq.cs \
 	Ifez.cs \
