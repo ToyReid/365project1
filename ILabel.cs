@@ -1,4 +1,4 @@
-interface ILabel
+public interface ILabel
 {
 	int Address{ get; }
 }
