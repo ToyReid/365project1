@@ -12,8 +12,8 @@ public class Div : IInstruction{
 	
 	public Div(){
 		ByteCode = new BitArray(32);
-		ByteCode[29] = 1;
-		ByteCode[25] = 1;
-		ByteCode[24] = 1;
+		ByteCode[29] = true;
+		ByteCode[25] = true;
+		ByteCode[24] = true;
 	}
 }
