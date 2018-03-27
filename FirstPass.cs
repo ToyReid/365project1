@@ -42,7 +42,7 @@ class FirstPass
 				}
 				else
 				{
-					rv.Push(line);
+					rv.Add(line);
 				}
 			}
 		}
