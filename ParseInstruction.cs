@@ -40,94 +40,123 @@ public class ParseInstruction {
 				instrList.Add(curInstr.ByteCode);
 				break;
 			case "swap":
-				Swap();
+				curInstr = new Swap();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "inpt":
-				Inpt();
+				curInstr = new Inpt();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "nop":
-				Nop();
+				curInstr = new Nop();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "pop":
-				Pop();
+				curInstr = new Pop();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "add":
-				Add();
+				curInstr = new Add();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "sub":
-				Sub();
+				curInstr = new Sub();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "mul":
-				Mul();
+				curInstr = new Mul();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "div":
-				Div();
+				curInstr = new Div();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "rem":
-				Rem();
+				curInstr = new Rem();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "and":
-				And();
+				curInstr = new And();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "or":
-				Or();
+				curInstr = new Or();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "xor":
-				Xor();
+				curInstr = new Xor();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "neg":
-				Neg();
+				curInstr = new Neg();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "not":
-				Not();
+				curInstr = new Not();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "goto":
-				Goto(labelLoc);
+				curInstr = new Goto(labelLoc);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "ifeq":
-				Ifeq(literal);
+				curInstr = new Ifeq(literal);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "ifne":
-				Ifne(literal);
+				curInstr = new Ifne(literal);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "iflt":
-				Iflt(literal);
+				curInstr = new Iflt(literal);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "ifgt":
-				Ifgt(literal);
+				curInstr = new Ifgt(literal);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "ifle":
-				Ifle(literal);
+				curInstr = new Ifle(literal);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "ifge":
-				Ifge(literal);
+				curInstr = new Ifge(literal);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "ifez":
-				Ifez(literal);
+				curInstr = new Ifez(literal);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "ifnz":
-				Ifnz(literal);
+				curInstr = new Ifnz(literal);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "ifmi":
-				Ifmi(literal);
+				curInstr = new Ifmi(literal);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "ifpl":
-				Ifpl(literal);
+				curInstr = new Ifpl(literal);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "dup":
-				Dup();
+				curInstr = new Dup(literal);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "print":
-				Print();
+				curInstr = new Print();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "dump":
-				Dump();
+				curInstr = new Dump();
+				instrList.Add(curInstr.ByteCode);
 				break;
 			case "push":
 				if(haveLabel)
-					Push(labelLoc);
+					curInstr = new Push(labelLoc);
 				else
-					Push(literal);
+					curInstr = new Push(literal);
+				instrList.Add(curInstr.ByteCode);
 				break;
 			default:
 				break;
