@@ -12,7 +12,7 @@ public class Goto : IInstruction{
 
 	public Goto(int value){
 		bc = new BitArray(32);
-		byte[] True = BitConverter.GetBytes(value);
+		byte[] True = BitConverter.GetBytes(value & 0xfffffff);
 		BitArray tmp = new BitArray(True);
 		bc.Or(tmp);
 		bc[30] = true;

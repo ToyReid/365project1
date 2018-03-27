@@ -15,7 +15,7 @@ public class Exit : IInstruction{
 
 		//Should Parse the value into an int if possible. then the int gets put into j
 		bc = new BitArray(32);
-		byte[] True = BitConverter.GetBytes(value);
+		byte[] True = BitConverter.GetBytes(value & 0xfffffff);
 		BitArray tmp = new BitArray(True);
 		bc.Or(tmp);
 	}

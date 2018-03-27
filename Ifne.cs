@@ -12,7 +12,7 @@ public class Ifne : IInstruction {
 	
 	public Ifne(int value){
 		bc = new BitArray(32);
-		byte[] True = BitConverter.GetBytes(value);
+		byte[] True = BitConverter.GetBytes(value & 0xffffff);
 		BitArray tmp = new BitArray(True);
 		bc.Or(tmp);
 		bc[31] = true;

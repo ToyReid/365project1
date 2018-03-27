@@ -14,7 +14,7 @@ public class Push : IInstruction {
 	//Given a Literal Constructor
 	public Push(int value) {
 		bc = new BitArray(32);
-		byte[] True = BitConverter.GetBytes(value);
+		byte[] True = BitConverter.GetBytes(value & 0xfffffff);
 		BitArray tmp = new BitArray(True);
 		bc.Or(tmp);
 		bc[31] = true;
