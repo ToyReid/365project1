@@ -4,15 +4,15 @@ public class ParseInstruction {
 	protected string instruction;
 	bool haveLabel;
 
-	public ParseInstruction(string line, Dictionary labels) {
+	public ParseInstruction(string line, LabelDict labels) {
 		// Split line into two strings delimited by spaces
 		// strs[0] = instruction, instr[1] = literal
 		string[] strs = line.Split(null);
 
 		instruction = strs[0];
-		if(literal = string.Empty) 
+		if(literal = string.Empty)
 			literal = 0;
-		else 
+		else
 			literal = Convert.ToInt32(strs[1]);
 		haveLabel = 1;
 		try {

@@ -9,7 +9,7 @@ public class Pop : IInstruction {
 			return bc;
 		}
 	}
-	
+
 	public Pop() {
 		bc = new BitArray(32);
 		bc[28] = true;

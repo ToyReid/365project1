@@ -22,18 +22,17 @@ all:
 	Inpt.cs \
 	InvalidLabelException.cs \
 	Label.cs \
-	LabelDict.cs
+	LabelDict.cs \
 	Mul.cs \
 	Neg.cs \
-	Nop.cs
+	Nop.cs \
 	Not.cs \
 	Or.cs \
 	ParseInstruction.cs \
-	Pop.cs
+	Pop.cs \
 	Print.cs \
 	Push.cs \
 	Rem.cs \
-	StringHelper.cs \
 	Sub.cs \
 	Swap.cs \
 	Xor.cs

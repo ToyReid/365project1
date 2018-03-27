@@ -1,5 +1,5 @@
 using System;
-using System.Collection;
+using System.Collections;
 
 public class Mul : IInstruction {
 	protected BitArray bc;
@@ -9,7 +9,7 @@ public class Mul : IInstruction {
 			return bc;
 		}
 	}
-	
+
 	public Mul() {
 		bc = new BitArray(32);
 		bc[29] = true;
