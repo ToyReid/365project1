@@ -1,10 +1,8 @@
-using Systems.Collections; 
+using System.Collections;
 
 public interface IInstruction
 {
-	BitArray ByteCode{
-	get{return ByteCode;}
-	}
+	BitArray ByteCode{ get; }
 
 }
 

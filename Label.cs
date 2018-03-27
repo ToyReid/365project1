@@ -9,7 +9,7 @@ public class Label : ILabel
 		}
 	}
 
-	public string Label{
+	public string LabelVal{
 		get{
 			return label;
 		}
