@@ -10,7 +10,7 @@ public class Ifle : IInstruction {
 		}
 	}
 	
-	public Ifle(string value){
+	public Ifle(int value){
 		bc = new BitArray(32);
 		byte[] True = BitConverter.GetBytes(value);
 		BitArray tmp = new BitArray(True);

@@ -11,7 +11,7 @@ public class Ifpl : IInstruction{
 		}
 	}
 
-	public Ifpl(string value){
+	public Ifpl(int value){
 		bc = new BitArray(32);
 		byte[] True = BitConverter.GetBytes(value);
 		BitArray tmp = new BitArray(True);
