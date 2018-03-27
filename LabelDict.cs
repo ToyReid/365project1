@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-class LabelDict
+public class LabelDict
 {
 	public Dictionary<string, ILabel> labels;
 

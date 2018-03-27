@@ -22,6 +22,5 @@ public class Push : IInstruction {
 		bc[29] = true;
 		bc[28] = true;
 	}
-
 }
 
