@@ -1,12 +1,11 @@
 using System;
 using System.Collections;
 
-
 public class Dup : IInstruction{
 	protected BitArray bc;
 
 	public BitArray ByteCode{
-		get{
+		get {
 			return bc;
 		}	
 	}
