@@ -12,7 +12,7 @@ public class Sub : IInstruction {
 	
 	public Sub() {
 		ByteCode = new BitArray(32);
-		ByteCode[29] = 1;
-		ByteCode[24] = 1;
+		ByteCode[29] = true;
+		ByteCode[24] = true;
 	}
 }

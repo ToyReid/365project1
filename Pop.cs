@@ -12,6 +12,6 @@ public class Pop : IInstruction {
 	
 	public Pop() {
 		ByteCode = new BitArray(32);
-		ByteCode[28] = 1;
+		ByteCode[28] = true;
 	}
 }

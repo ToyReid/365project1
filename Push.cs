@@ -17,10 +17,10 @@ public class Push : IInstruction {
 		byte[] True = BitConverter.GetByte(value);
 		BitArray tmp = new BitArray(True);
 		ByteCode.Or(tmp);
-		ByteCode[31] = 1;
-		ByteCode[30] = 1;
-		ByteCode[29] = 1;
-		ByteCode[28] = 1;
+		ByteCode[31] = true;
+		ByteCode[30] = true;
+		ByteCode[29] = true;
+		ByteCode[28] = true;
 	}
 	
 	//Memory Address Push Constructor.
@@ -30,10 +30,10 @@ public class Push : IInstruction {
 		byte[] True = BitConverter.GetByte(value);
 		BitArray tmp = new BitArray(True);
 		ByteCode.Or(tmp);		
-		ByteCode[31] = 1;
-		ByteCode[30] = 1;
-		ByteCode[29] = 1;
-		ByteCode[28] = 1;
+		ByteCode[31] = true;
+		ByteCode[30] = true;
+		ByteCode[29] = true;
+		ByteCode[28] = true;
 	}
 
 }
