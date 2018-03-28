@@ -97,47 +97,47 @@ public class ParseInstruction {
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "goto":
-					curInstr = new Goto(literal);
+					curInstr = new Goto(literal- instrList.Count * 4);
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "ifeq":
-					curInstr = new Ifeq(literal);
+					curInstr = new Ifeq(literal- instrList.Count * 4);
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "ifne":
-					curInstr = new Ifne(literal);
+					curInstr = new Ifne(literal- instrList.Count * 4);
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "iflt":
-					curInstr = new Iflt(literal);
+					curInstr = new Iflt(literal- instrList.Count * 4);
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "ifgt":
-					curInstr = new Ifgt(literal);
+					curInstr = new Ifgt(literal- instrList.Count * 4);
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "ifle":
-					curInstr = new Ifle(literal);
+					curInstr = new Ifle(literal- instrList.Count * 4);
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "ifge":
-					curInstr = new Ifge(literal);
+					curInstr = new Ifge(literal- instrList.Count * 4);
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "ifez":
-					curInstr = new Ifez(literal);
+					curInstr = new Ifez(literal- instrList.Count * 4);
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "ifnz":
-					curInstr = new Ifnz(literal);
+					curInstr = new Ifnz(literal- instrList.Count * 4);
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "ifmi":
-					curInstr = new Ifmi(literal);
+					curInstr = new Ifmi(literal- instrList.Count * 4);
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "ifpl":
-					curInstr = new Ifpl(literal);
+					curInstr = new Ifpl(literal- instrList.Count * 4);
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "dup":
