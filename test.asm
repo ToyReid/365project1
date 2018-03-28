@@ -18,7 +18,8 @@ start:
 	push  -44
 	not
 	mul
-	push  0xdadd
+	push  0xd
+	add
 	add
 	dup
 	add
