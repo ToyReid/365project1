@@ -14,44 +14,21 @@ class Assembler
 
 		var pi = new ParseInstruction(commands, labels);
 
-		//print feed beef
-
-		using(var br = new BinaryWriter(File.OpenWrite(argv[1])))
+		int i = 0;
+		using(var br = new BinaryWriter(File.Open(argv[1], FileMode.Create)))
 		{
 			var feedbeef = new byte[] { 0xfe, 0xed, 0xbe, 0xef};
 
-			//SwapBytes(feedbeef);
-			foreach(byte b in feedbeef)
-			{
-				br.Write(b);
-			}
+			br.Write(feedbeef);
 
 			foreach(BitArray b in pi.InstrList)
 			{
-				byte[] temp = new byte[8];
+				byte[] temp = new byte[4];
 				b.CopyTo(temp, 0);
-				//SwapBytes(temp);
-				foreach(byte t in temp)
-				{
-					br.Write(t);
-				}
-
+				br.Write(temp);
 			}
 		}
 
-	}
-
-	public static void SwapBytes(byte[] b)
-	{
-		int i;
-		byte temp;
-		for(i = 0; i < b.Length/2; i++)
-		{
-			temp = b[i];
-			b[i] = b[b.Length - i - 1];
-			b[b.Length - i - 1] = temp;
-
-		}
 	}
 
 }

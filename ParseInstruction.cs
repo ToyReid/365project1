@@ -3,39 +3,37 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ParseInstruction {
-	protected int labelLoc;
-	protected int literal;
-	protected string instruction;
 	protected IInstruction curInstr;
 	protected List<BitArray> instrList = new List<BitArray>();
-	bool haveLabel;
 
 	public List<BitArray> InstrList {
 		get { return instrList; }
 	}
 
 	public ParseInstruction(List<string> lines, LabelDict labels) {
+		int literal = 0;
+		string instruction;
 		foreach(string line in lines) {
 			// Split line into two strings delimited by spaces
 			// strs[0] = instruction, instr[1] = literal
-			string[] strs = line.Split(null);
+			string[] strs = line.Split(' ');
 
 			instruction = strs[0];
 			if(strs.Length == 1)
 				literal = 0;
 			else
+			{
 				try {
-					//Console.WriteLine($"{strs[1]}")
-					literal = Convert.ToInt32(strs[1]);
+					literal = ParseInt(strs[strs.Length - 1]);
 				}
 				catch(FormatException) {
 					try {
-						literal = labels[strs[1]].Address - instrList.Count * 4;
+						literal = labels[strs[strs.Length - 1]].Address;// - instrList.Count * 4;
 					}
 					catch(InvalidLabelException) {
-						// Do nothing
 					}
 				}
+			}
 
 			switch (instruction) {
 				case "exit":
@@ -99,7 +97,7 @@ public class ParseInstruction {
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "goto":
-					curInstr = new Goto(labelLoc);
+					curInstr = new Goto(literal);
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "ifeq":
@@ -155,15 +153,27 @@ public class ParseInstruction {
 					instrList.Add(curInstr.ByteCode);
 					break;
 				case "push":
-					if(haveLabel)
-						curInstr = new Push(labelLoc);
-					else
-						curInstr = new Push(literal);
+					curInstr = new Push(literal);
 					instrList.Add(curInstr.ByteCode);
 					break;
 				default:
 					break;
 			}
 		}
+	}
+
+	public static int ParseInt(string toParse)
+	{
+		int val;
+		int base_ = 10;
+
+
+		if(toParse.Length >= 2 && toParse.Substring(0,2) =="0x")
+		{
+			base_ = 16;
+			toParse = toParse.Substring(2);
+		}
+
+		return Convert.ToInt32(toParse, base_);
 	}
 }

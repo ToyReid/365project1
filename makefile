@@ -1,5 +1,5 @@
 all:
-	mcs \
+	mcs -debug \
 	Assembler.cs \
 	Add.cs \
 	And.cs \
