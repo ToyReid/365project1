@@ -8,11 +8,13 @@ class FirstPass
 
 	string mFileName;
 
+	//save the filename
 	public FirstPass(string fileName)
 	{
 		mFileName = fileName;
 	}
 
+	//clean input and parse labels
 	public List<string> GetCleanInput(out LabelDict dict)
 	{
 		List<string> rv = new List<string>();
@@ -24,6 +26,7 @@ class FirstPass
 
 			while((line = sr.ReadLine()) != null)
 			{
+				//remove empty lines
 				if(String.IsNullOrWhiteSpace(line)) continue;
 
 				//cleaning the line
@@ -32,6 +35,7 @@ class FirstPass
 				line = line.Trim();
 				line = line.ToLower();
 
+				//remove empty lines
 				if(String.IsNullOrWhiteSpace(line)) continue;
 
 				//is a label
@@ -50,6 +54,7 @@ class FirstPass
 	}
 
 
+	//remove the end of a string from the found substring (inclusive)
 	public static string RemoveAfterSubstring(string s, string substring)
 	{
 		int index = s.IndexOf(substring);
